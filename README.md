@@ -18,7 +18,7 @@
 
 This is applications allows users to create a unique login that incorporates an email address and password.  Passport.js is used to create a user account which saves login credentials and encrypts it by using hash and salt sync.
 
-![App Screenshot](https://github.com/kent28808/Burger-Express-Handlebars/blob/main/Photo1.png)
+![App Screenshot](https://github.com/kent28808/Reverse-Engineering-Code/blob/main/Develop/Photos/app%20screenshot.png)
 
 
 ## Built With
@@ -44,11 +44,11 @@ Below is a walkthough of how the app functions and the roles each file plays.
 
 1. db/myschema.sql.  
 I created a database to launch the app locally to see what the front end looked like and the functionality.  I created a user test@gmail.com and set the password as 1234.  As you can see in password column, this app encrypts it.
-![Data Screenshot](https://github.com/kent28808/Burger-Express-Handlebars/blob/main/Photo1.png)
+![Data Screenshot](https://github.com/kent28808/Reverse-Engineering-Code/blob/main/Develop/Photos/mysql.png)
 
 2. develop/config/middleware/isAuthenticated.js
 This allows only registered users to access the members page.  If the user does not have an account, it redirects them to the home page.
-![middleware Screenshot](https://github.com/kent28808/Burger-Express-Handlebars/blob/main/Photo1.png)
+![middleware Screenshot](https://github.com/kent28808/Reverse-Engineering-Code/blob/main/Develop/Photos/middleware.png)
 
 3. config.json
 This holds all credentials for the owner of the database.
@@ -56,7 +56,7 @@ This holds all credentials for the owner of the database.
 4. passport.js
 This uses local strategy which requires the user to login with a valid email address and password.
 Passport also authenticates state across HTTPs requests.
-![passport.js Screenshot](https://github.com/kent28808/Burger-Express-Handlebars/blob/main/Photo1.png)
+![passport.js Screenshot](https://github.com/kent28808/Reverse-Engineering-Code/blob/main/Develop/Photos/passport.png)
 
 5. models index.js and user.js
 -index.js returns the stored users login credentials from the database, creates a model for each file and exports the database.
@@ -69,7 +69,7 @@ Passport also authenticates state across HTTPs requests.
 -style.css holds all the styles and colors for the html webpages.  
 -login.html webpage that allows the user to enter login credentials.
 -members.html webpage that only registered user have access to once login is validated.
-![members.html Screenshot](https://github.com/kent28808/Burger-Express-Handlebars/blob/main/Photo1.png)
+![members.html Screenshot](https://github.com/kent28808/Reverse-Engineering-Code/blob/main/Develop/Photos/members%20page.png)
 -signup.html webpage that allows new users to signup and with an email address and password.
 
 7. Routes
