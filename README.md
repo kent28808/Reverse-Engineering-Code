@@ -40,8 +40,49 @@ npm run watch
 
 ## Walkthrough
 
-User opens deployed Burger app through the Heroku url.  User can then add a burger of his or her choosing by typing in a burger name in the "add a burger" text box.
-The burger object will then show up in the "Burgers to Eat" column.  The user will then see two buttons "Eat Me" and "Delete".  If the user clicks on "Eat Me", the burget object will then move to "Burgers Eaten".  The "Delete" button will remove the burger object entirely.
+Below is a walkthough of how the app functions and the roles each file plays.
+
+1. db/myschema.sql.  
+I created a database to launch the app locally to see what the front end looked like and the functionality.  I created a user test@gmail.com and set the password as 1234.  As you can see in password column, this app encrypts it.
+![Data Screenshot](https://github.com/kent28808/Burger-Express-Handlebars/blob/main/Photo1.png)
+
+2. develop/config/middleware/isAuthenticated.js
+This allows only registered users to access the members page.  If the user does not have an account, it redirects them to the home page.
+![middleware Screenshot](https://github.com/kent28808/Burger-Express-Handlebars/blob/main/Photo1.png)
+
+3. config.json
+This holds all credentials for the owner of the database.
+
+4. passport.js
+This uses local strategy which requires the user to login with a valid email address and password.
+Passport also authenticates state across HTTPs requests.
+![passport.js Screenshot](https://github.com/kent28808/Burger-Express-Handlebars/blob/main/Photo1.png)
+
+5. models index.js and user.js
+-index.js returns the stored users login credentials from the database, creates a model for each file and exports the database.
+-user.js encrypts the users password and validates user though the login page.
+
+6. Public frontend files
+-login.js deals with validation of inputs for the email address and password.  Has an event listener for the submit button.  Redirects user to members page if login in successful. 
+-members.js updates html on members page.
+-signup.js deals with new user creating new login credentials and also has an event listener for the submit button.
+-style.css holds all the styles and colors for the html webpages.  
+-login.html webpage that allows the user to enter login credentials.
+-members.html webpage that only registered user have access to once login is validated.
+![members.html Screenshot](https://github.com/kent28808/Burger-Express-Handlebars/blob/main/Photo1.png)
+-signup.html webpage that allows new users to signup and with an email address and password.
+
+7. Routes
+-api-routes
+Routes the user with valid login credentials to the members page, signing up of a new user, logging out of a user and getting user data.
+-html-routes
+Routes user to members page if they already have an account.  Routes user who does not have an account to the signup page.
+
+8. package-lock.json displays all the technologies, libaraies and versions used.
+
+9. package.json displays all dependencies, authors, and licenses.
+
+10. server.js lists and establishes the packages and ports. Uses express and middleware needed for authentication.  Tracks the users login status.
 
 
 ## Contributions
