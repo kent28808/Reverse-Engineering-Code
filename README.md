@@ -44,6 +44,7 @@ Below is a walkthough of how the app functions and the roles each file plays.
 
 1. db/myschema.sql.  
 I created a database to launch the app locally to see what the front end looked like and the functionality.  I created a user test@gmail.com and set the password as 1234.  As you can see in password column, this app encrypts it.
+
 ![Data Screenshot](https://github.com/kent28808/Reverse-Engineering-Code/blob/main/Develop/Photos/mysql.png)
 
 2. develop/config/middleware/isAuthenticated.js
