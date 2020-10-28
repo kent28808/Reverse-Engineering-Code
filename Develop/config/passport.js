@@ -15,12 +15,14 @@ passport.use(new LocalStrategy(
   //call back function that takes in email, password, and another callback function named "done".
   function(email, password, done) {
     // When a user tries to sign in this code runs
+    // find.One will find specific user by email.
     db.User.findOne({
       where: {
         email: email
       }
+      // dbUser is what is returned from the .fineOne.
     }).then(function(dbUser) {
-      // If there's no user with the given email
+      // If there's no user with the given email then a message of "Incorrect email will be prompted."
       if (!dbUser) {
         return done(null, false, {
           message: "Incorrect email."

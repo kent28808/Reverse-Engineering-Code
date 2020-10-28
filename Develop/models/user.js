@@ -5,16 +5,22 @@ module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
     // The email cannot be null, and must be a proper email before creation
     email: {
+      // email is a string.
       type: DataTypes.STRING,
+      // email cannot be null.
       allowNull: false,
+      // email needs to be unique.
       unique: true,
+      // validates input is an email address.
       validate: {
         isEmail: true
       }
     },
     // The password cannot be null
     password: {
+      // password is a string.
       type: DataTypes.STRING,
+      // password cannot be null.
       allowNull: false
     }
   });
